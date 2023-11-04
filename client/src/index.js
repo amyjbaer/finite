@@ -1,17 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { InstagramLogin } from '@amraneze/react-instagram-login';
+
+function App() {
+  const responseInstagram = (response) => {
+    console.log(response);
+  };
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <InstagramLogin
+          clientId="283690477978497"
+          onSuccess={responseInstagram}
+          onFailure={responseInstagram}
+          redirectUri="https://willowy-biscuit-0a7ec9.netlify.app/api/auth"
+          useRedirect={true}
+        />
+      </header>
+    </div>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(<App />);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// useEffect(() => {
+//     fetch('/time').then(res => res.json()).then(data => {
+//       setCurrentTime(data.time);
+//     });
+//   }, []);
+
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+
+//         ... no changes in this part ...
+
+//         <p>The current time is {currentTime}.</p>
+//       </header>
+//     </div>
+//   );
