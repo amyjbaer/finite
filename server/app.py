@@ -35,7 +35,7 @@ def webhook():
         origin.pull()
         return 'success', 200
     else:
-        return 'Wrong event type', 400
+        return 'wrong method in request', 400
 
 if __name__ == "__main__":
     app.run(debug=True)
