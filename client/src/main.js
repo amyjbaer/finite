@@ -14,7 +14,7 @@ function App() {
           clientId="283690477978497"
           onSuccess={responseInstagram}
           onFailure={responseInstagram}
-          redirectUri="https://willowy-biscuit-0a7ec9.netlify.app/api/auth"
+          redirectUri="https://amyjbaer.pythonanywhere.com/api/auth"
           useRedirect={true}
         />
       </header>
