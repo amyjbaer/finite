@@ -30,7 +30,7 @@ def auth():
 @app.route('/api/update_server', methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        repo = git.Repo('../..')
+        repo = git.Repo('.', search_parent_directories=True)
         origin = repo.remotes.origin
         origin.pull()
         return 'success', 200
