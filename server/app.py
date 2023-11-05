@@ -37,6 +37,5 @@ def webhook():
     else:
         return 'wrong method in req', 400
 
-
 if __name__ == "__main__":
     app.run(debug=True)
