@@ -14,7 +14,7 @@ export default function Login() {
           onFailure={responseInstagram}
           redirectUri="https://amyjbaer.pythonanywhere.com/auth"
           useRedirect={true}
-          scope="instagram_graph_user_profile,instagram_graph_user_media,instagram_graph_user_profile"
+          scope="user_profile,user_media,instagram_graph_user_profile,instagram_graph_user_media"
         />
       </header>
     </div>
