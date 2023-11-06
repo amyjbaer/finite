@@ -12,8 +12,11 @@ app = Flask(__name__, static_folder='../client/build', static_url_path='/')
 jwt = JWTManager(app)
 
 @app.route('/')
-@app.errorhandler(404)
 def index():
+    return app.send_static_file('index.html')
+
+@app.errorhandler(404)
+def not_found(e):
     return app.send_static_file('index.html')
 
 @app.route("/api/auth")
