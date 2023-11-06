@@ -37,6 +37,8 @@ def auth():
         insta_token = data.get("access_token")
         if not insta_token:
             raise Exception("access token not found " + response.text)
+        # insta_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5OTIzOTA5NiwianRpIjoiYzEwNjkwNmYtMzVjMC00MTA1LWE1OWQtOGUwNWM0ZTcyMDUxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IklHUVdSUE1XbHRNbVZOTVZseFgwTm1hSFpBTE1ESklZM2wwV1hoeVNqWkFPYTJ0UVRqWkFwWVc1UGJHVTBTakppUjIxaVRFSTVTMkp5VlVKak9FVlVkRVZ1UkZNdGFUbGtNV3Q1TWpoQmVFMWtZM1pBMmQzRk1WRWRvZDBKTVEyUXdiR013VHpnM1VDMVZTRkZhWkEwTlNVMmxEUzJKemRHOUdaQWxWMU5FdHNPRE4yWWpBd1VRWkRaRCIsIm5iZiI6MTY5OTIzOTA5NiwiZXhwIjoxNjk5MjQyNjk2fQ.d4422sMdQvO85m1hm_hS-Nq8czzO_USEJIFxFVRd98Q"
+        # data = {"access_token": insta_token}
         access_token = create_access_token(identity=data["access_token"])
         # short_term_resp = {"access_token": "IGQWRPUzl4NE9INm8zT3B6YnRmMTBIUXE2c0dKNEdNVFpOcHVGNVdCcG1kdFlObVFrUFd3NVl1NjBYRUJ1ZA1FUTVJHdzJxTlpQMDFYbW1xblUzRW1lYzZAiZAW5BcTA0TS11aThrTWVNekJmUmlrcy1yV1VlUUx2ay1ZAUTYzSk5ZAWWxpQQZDZD", "user_id": 6787951627954458}
         
@@ -53,6 +55,7 @@ def user():
     try:
         token = get_jwt_identity()
         response = requests.get(f'https://graph.instagram.com/me?fields=id,username&access_token={token}')
+        import pdb; pdb.set_trace()
         return response
     except Exception as e:
         return json.dumps(e)

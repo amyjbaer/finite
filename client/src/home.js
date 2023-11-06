@@ -11,7 +11,7 @@ export default function Home() {
       method: 'GET',
       url: '/api/user',
       headers: {
-        Authorization: 'Bearer' + token,
+        Authorization: 'Bearer ' + token,
       },
     })
       .then((response) => {
