@@ -3,7 +3,7 @@ import axios from 'axios';
 import useToken from './token';
 
 export default function Home() {
-  const { getToken, setToken } = useToken();
+  const { token, setToken } = useToken();
   const [name, setName] = useState(null);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export default function Home() {
       method: 'GET',
       url: '/api/user',
       headers: {
-        Authorization: 'Bearer' + getToken(),
+        Authorization: 'Bearer' + token,
       },
     })
       .then((response) => {
