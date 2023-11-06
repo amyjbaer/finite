@@ -6,8 +6,8 @@ from flask_jwt_extended import create_access_token,get_jwt,get_jwt_identity, uns
 from datetime import timedelta, timezone, datetime
 
 app = Flask(__name__, static_folder='../client/build', static_url_path='/')
-# app.config["JWT_SECRET_KEY"] = "please-remember-to-change-me"
-# app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
+app.config["JWT_SECRET_KEY"] = "25e717c1bc3549b454d91379f82380bb509bf953f345e45c0b08849c50004ac1"
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 
 jwt = JWTManager(app)
 
