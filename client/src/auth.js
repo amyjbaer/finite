@@ -20,6 +20,7 @@ export default function Auth() {
       .then((response) => {
         if (response.data.access_token) {
           setToken(response.data.access_token);
+          localStorage.setItem('insta_token', response.data.insta_access_token);
         } else {
           let error = response.data.error;
           if (!error) {

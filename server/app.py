@@ -43,12 +43,12 @@ def auth():
         # response = requests.get(
         #     f'https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_secret={client_secret}&access_token={short_term_resp["access_token"]}'
         # )
-        return {"access_token": access_token}
+        return {"access_token": access_token, 'insta_access_token': insta_token}
     except Exception as e:
         return {"error": str(e)}
 
 @app.route('/api/user')
-@jwt_required
+@jwt_required()
 def user():
     try:
         token = get_jwt_identity()

@@ -15,6 +15,7 @@ export default function Home() {
       },
     })
       .then((response) => {
+        console.log(response);
         const res = response.data;
         res.access_token && setToken(res.access_token);
         setName(res.name);
