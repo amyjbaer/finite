@@ -28,7 +28,7 @@ def auth():
             'client_id': (None, '283690477978497'),
             'client_secret': (None, client_secret),
             'grant_type': (None, 'authorization_code'),
-            'redirect_uri': (None, 'https://amyjbaer.pythonanywhere.com/api/auth'),
+            'redirect_uri': (None, 'https://amyjbaer.pythonanywhere.com/auth'),
             'code': (None, code),
         }
 
