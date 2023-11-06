@@ -36,7 +36,7 @@ def auth():
         data = response.json()
         insta_token = data.get("access_token")
         if not insta_token:
-            raise Exception("access token not found")
+            raise Exception("access token not found " + response.text)
         access_token = create_access_token(identity=data["access_token"])
         # short_term_resp = {"access_token": "IGQWRPUzl4NE9INm8zT3B6YnRmMTBIUXE2c0dKNEdNVFpOcHVGNVdCcG1kdFlObVFrUFd3NVl1NjBYRUJ1ZA1FUTVJHdzJxTlpQMDFYbW1xblUzRW1lYzZAiZAW5BcTA0TS11aThrTWVNekJmUmlrcy1yV1VlUUx2ay1ZAUTYzSk5ZAWWxpQQZDZD", "user_id": 6787951627954458}
         
